@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .nav-link {
+  @apply;
+} */
+
+/* .icon-animation {
+  @apply;
+} */
+
+/* .hover-shadow-primary-big {
+  @apply;
+} */
+
+/* .hover-shadow-primary-small {
+  @apply;
+} */
+
+/* 全局設置 */
+* {
+  scroll-behavior: smooth;
+  scroll-margin-top: 3rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Scroll Bar 修飾 */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f44336;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eeeeee;
+}
+.dark ::-webkit-scrollbar-track {
+  background-color: #333333;
+}
+
+/* 打字效果動畫 */
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 2px solid #b0bec5;
+  animation: typing 18s steps(40, end) infinite, 
+   blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #b0bec5;
+  }
+}
+
+@keyframes change-text {
+  0%{
+    content: "30年學生";
+  }
+  33%{
+    content: "設計師";
+  }
+  66%{
+    content: "開發者";
+  }
+}
+
+@keyframes typing {
+  0%,
+  10% {
+    width: 0;
+  }
+  20%,
+  30% {
+    width: 7.5ch;
+  }
+  33.33%,
+  43.33% {
+    width: 0;
+  }
+  53.33%,
+  63.33% {
+    width: 9ch;
+  }
+  66.66%,
+  76.66% {
+    width: 0;
+  }
+  86.66%,
+  96.66% {
+    width: 9ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.typing-animation::after {
+  content: "";
+  animation: change-text 18s steps(1, end) infinite;
+}
